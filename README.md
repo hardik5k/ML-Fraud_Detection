@@ -1,6 +1,6 @@
 # ML-Fraud_Detection 
 
-Link of kaggle competetion to access the datasets and Leaderboards:- https://www.kaggle.com/competitions/its-a-fraud
+Link of kaggle competetion to access the datasets and Leaderboard:- https://www.kaggle.com/competitions/its-a-fraud
 
 Hyperparamters of Models with their Scores:-
 
