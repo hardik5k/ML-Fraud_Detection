@@ -9,4 +9,5 @@ Instructions to Run-
 
 Hyperparamters of Models with their Scores:-
 
-<img width="429" alt="image" src="https://user-images.githubusercontent.com/79003717/204974828-ce3dcfe9-0ab8-44de-bca6-1415a303bbca.png">
+<img width="458" alt="Models" src="https://user-images.githubusercontent.com/79003717/207495142-9eef0502-bce7-422c-bc6d-8292e6582179.png">
+
