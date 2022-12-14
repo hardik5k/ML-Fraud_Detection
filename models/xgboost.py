@@ -36,30 +36,30 @@ del train
 
 """## Hyperparamter Tuning"""
 
-# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 42)
 
-# y_train.values.ravel().shape
+y_train.values.ravel().shape
 
-# from sklearn.model_selection import RandomizedSearchCV
-# from sklearn.ensemble import RandomForestClassifier
-# clf = XGBClassifier(
-#         learning_rate=0.02,
-#         subsample=0.8,
-#         tree_method='gpu_hist',
-#         colsample_bytree=0.85,
-#         scale_pos_weight = 10,
-#         missing=-1,
-#         reg_alpha=0.15,
-#         reg_lambda =0.85
-#     )
+from sklearn.model_selection import RandomizedSearchCV
+from sklearn.ensemble import RandomForestClassifier
+clf = XGBClassifier(
+        learning_rate=0.02,
+        subsample=0.8,
+        tree_method='gpu_hist',
+        colsample_bytree=0.85,
+        scale_pos_weight = 10,
+        missing=-1,
+        reg_alpha=0.15,
+        reg_lambda =0.85
+    )
     
-# estimators = [100,500,1000,2000]
-# max_depth = [9, 10, 12, 15]
-# param = {'n_estimators': estimators ,'max_depth':max_depth}
-# model = RandomizedSearchCV(estimator=clf,  param_distributions=param, verbose=1,cv=3, n_iter=6, scoring='roc_auc')
-# model.fit(X_train,y_train.values.ravel())
+estimators = [100,500,1000,2000]
+max_depth = [9, 10, 12, 15]
+param = {'n_estimators': estimators ,'max_depth':max_depth}
+model = RandomizedSearchCV(estimator=clf,  param_distributions=param, verbose=1,cv=3, n_iter=6, scoring='roc_auc')
+model.fit(X_train,y_train.values.ravel())
 
-# model.best_params_
+model.best_params_
 
 """## XGBOOST"""
 
@@ -75,7 +75,7 @@ folds = StratifiedKFold(n_splits=n_fold, shuffle = True)
 for fold_n, (train_index, valid_index) in enumerate(folds.split(X, y)):
     clf = XGBClassifier(
         n_estimators=1000,
-        max_depth=12,
+        max_depth=15,
         learning_rate=0.03,
         subsample=0.8,
         tree_method='gpu_hist',
